@@ -99,7 +99,7 @@ menu:
                 system("cls");
                 if(windows == 0) system("MODE 83,20");
                 system("color 87");
-                PlaySound(TEXT(".\\audio\\[SE]Success.wav"), 0, SND_ASYNC);
+                PlaySound(TEXT(".\\audio\\[SE]Chime.wav"), 0, SND_ASYNC);
                 printf("┌────────────────────────────────────────────────────────────────────────────────┐\n"), Sleep(20);
                 printf("│"), gotoxy(36, 1), printf("DISCLAIMER!"), gotoxy(81, 1), printf("│\n");
                 printf("├"), printf("────────────────────────────────────────────────────────────────────────────────"), gotoxy(81, 2), printf("┤\n"), Sleep(20);
@@ -177,7 +177,8 @@ menu:
                     }
                     if (key == '\r'){
                         if (counter == 1){
-                            PlaySound(TEXT(".\\audio\\[SE]Action.wav"), 0, SND_ASYNC);
+                            if(windows == 0) PlaySound(TEXT(".\\audio\\[SE]Flash.wav"), 0, SND_ASYNC);
+                            if(windows == 1) PlaySound(TEXT(".\\audio\\[SE]Saint.wav"), 0, SND_ASYNC);
                             if(windows == 0){
                                 gotoxy(41, 9), printf("┌─────────────────────────────────────────────────────┐\n"), Sleep(10);
                                 gotoxy(41, 10), printf("│"), gotoxy(95, 10), printf("│\n"), gotoxy(60, 9), printf(" 안내 "), Sleep(10);
@@ -209,7 +210,7 @@ menu:
                                     if (key == '\r'){
                                         if(counter == 1){
                                             windows = 1;
-                                            PlaySound(TEXT(".\\audio\\[SE]Action.wav"), 0, SND_ASYNC);
+                                            PlaySound(TEXT(".\\audio\\[SE]Saint.wav"), 0, SND_ASYNC);
                                             system("MODE 120,30");
                                             system("color 07");
                                             goto menu;
@@ -282,7 +283,7 @@ menu:
                 printf("┌─────────────────────────────────┰─────────────────────────────────────────────────────────────┐\n");
                 printf("│"), gotoxy(4, 0), printf(" 도움말 "), gotoxy(1, 1), printf("  이동: 방향키   상호작용: 엔터  ┃  더 좋은 플레이 환경을 위해 콘솔에서 실행이 권장됩니다."), gotoxy(96, 1), printf("│\n");
                 printf("├"), printf("─────────────────────────────────┸─────────────────────────────────────────────────────────────"),
-                    gotoxy(96, 2), printf("┤\n");
+                gotoxy(96, 2), printf("┤\n");
                 printf("│"), gotoxy(96, 3), printf("│\n");
                 printf("│"), gotoxy(96, 4), printf("│\n");
                 printf("│"), gotoxy(96, 5), printf("│\n");
@@ -307,8 +308,61 @@ menu:
                 goto menu;
             }
 
-            if (counter == 4)
-                exit(EXIT_SUCCESS);
+            if (counter == 4){
+                counter = 2;
+                PlaySound(TEXT(".\\audio\\[SE]Flash.wav"), 0, SND_ASYNC);
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+                gotoxy(41, 9), printf("┌─────────────────────────────────────────────────────┐\n"), Sleep(10);
+                gotoxy(41, 10), printf("│"), gotoxy(95, 10), printf("│\n"), gotoxy(60, 9), printf(" 안내 "), Sleep(10);
+                gotoxy(41, 11), printf("│"), gotoxy(95, 11), printf("│\n"), Sleep(10);
+                gotoxy(41, 12), printf("│"), gotoxy(95, 12), printf("│\n"), Sleep(10);
+                gotoxy(41, 13), printf("│"), gotoxy(95, 13), printf("│\n"), Sleep(10);
+                gotoxy(41, 14), printf("│"), gotoxy(95, 14), printf("│\n"), Sleep(10);
+                gotoxy(41, 15), printf("│"), gotoxy(95, 15), printf("│\n"), Sleep(10);
+                gotoxy(41, 16), printf("│"), gotoxy(95, 16), printf("│\n"), Sleep(10);
+                gotoxy(41, 17), printf("│"), gotoxy(95, 17), printf("│\n"), Sleep(10);
+                gotoxy(41, 18), printf("└─────────────────────────────────────────────────────┘\n"), Sleep(10);
+                gotoxy(43, 10), printf("가끔 현실을 사는것도 좋습니다.");
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
+                gotoxy(43, 12), printf("게임을 종료하시겠습니까?");
+                for(short i = 0;;){
+                    gotoxy(43, 15), color(Set[0]) ,printf("예");
+                    gotoxy(43, 16), color(Set[1]), printf("아니오");
+                    key = _getch();
+                    if (key == 72 && (counter >= 2 && counter <= 2)){ // 72 방향키 위키
+                        counter--;
+                        PlaySound(TEXT(".\\audio\\[SE]Cursor.wav"), 0, SND_ASYNC);
+                    }
+                    if (key == 80 && (counter >= 1 && counter <= 1)){ // 80 방향키 아래 키
+                        counter++;
+                        PlaySound(TEXT(".\\audio\\[SE]Cursor.wav"), 0, SND_ASYNC);
+                    }
+                    if (key == '\r'){
+                        if(counter == 1){
+                            exit(EXIT_SUCCESS);
+                        }
+                        if(counter == 2){
+                            PlaySound(TEXT(".\\audio\\[SE]Cancel.wav"), 0, SND_ASYNC);
+                            system("color 07");
+                            Set[1] = 7;
+                            goto menu;
+                        }
+                    }
+                    Set[0] = 7;
+                    Set[1] = 7;
+                    Set[2] = 7;
+                    Set[3] = 7;
+                    if (counter == 1)
+                        Set[0] = 12;
+                    if (counter == 2)
+                        Set[1] = 12;
+                    if (counter == 3)
+                        Set[2] = 12;
+                    if (counter == 4)
+                        Set[2] = 12;
+                }
+            }
+                
         }
         Set[0] = 7;
         Set[1] = 7;
