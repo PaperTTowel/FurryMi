@@ -7,6 +7,15 @@
 void prologue()
 { // 프롤로그 파트 담당자:
     static char key;
+    char name;
+    printf("┌──────────────────────────────────────────┐\n");
+    printf("│"), gotoxy(43, 1), printf("│");
+    gotoxy(14, 1), printf("당신의 이름은?\n");
+    printf("├──────────────────────────────────────────┤\n");
+    printf("│"), gotoxy(43, 3), printf("│\n");
+    printf("└──────────────────────────────────────────┘\n");
+    gotoxy(3, 3), printf("> "), scanf("%f", &name);
+    system("cls");
     printf("\t프롤로그\n================================================================================\n\n\n");
     Sleep(1500);
     PlaySound(TEXT(".\\audio\\[BGS]clock2.wav"), 0, SND_ASYNC | SND_LOOP); // BGS 반복재생
