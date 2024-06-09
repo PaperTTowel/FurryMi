@@ -178,18 +178,20 @@ return1:
     key = getch();
     gotoxy(1, 4), printf("다 똑같다 몇몇 사람이 수인이 되어버린 것만 빼고... 내 자리도 똑같은 위치에 있었다.\n");
     key = getch();
-    gotoxy(1, 4), printf("다만 다 내가 모르는 얼굴이다.\n");
+    gotoxy(1, 4), printf("다만 다 내가 모르는 얼굴이다.                                                         \n");
     key =  getch();
     gotoxy(1, 4), printf("머리가 띵한 상태로 학교 시간이 빠르게 지나갔다. 매우 빠르게...\n");
     key = getch();
-    gotoxy(1, 4), printf("그렇게 시간은 흘러 하교 시간이 되었고 나는 하교 준비를 마치고 신발장을 향해 가고 있었다.\n");
+    gotoxy(1, 4), printf("그렇게 시간은 흘러 하교 시간이 되었고 나는 하교 준비를 마치고 신발장을 향해 가고 있었다.  \n");
     key = getch();
+    gotoxy(1, 4), printf("                                                                                        \n");
+    // 2/3 프롤로그 파트 담당자: 30508 김윤기
 
     //여기 신발장 사진 ++------------------------------------------------------------------------------------------------------
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
     gotoxy(1, 4), printf("여어");
-    for(short i = 4; i <= 64; i++){ // 비상!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    for(short i = 4; i <= 64; i++){
         gotoxy(i, 4), printf("!"), Sleep(30);
     }
     key = getch();
@@ -197,10 +199,11 @@ return1:
 
     gotoxy(1, 4), printf("누가 큰 소리로 부르는 소리가 들렸지만 날 부르는 소리가 아닌 것이 뻔했기에 나는 무시하고 신발장을 향해 가고 있었다.\n");
     key = getch();
-    gotoxy(1, 4), printf("신발장에 다다른 그 순간 누군가가 나에게 어깨동무를 한 것이다.\n");
+    gotoxy(1, 4), printf("신발장에 다다른 그 순간 누군가가 나에게 어깨동무를 한 것이다.                                                         \n");
     key = getch();
+    gotoxy(1, 4), printf("                                                                                        \n");
     for(short i = 1; i <= 5; i++){
-        gotoxy(i, 4), printf("."), Sleep(30);
+        gotoxy(i, 4), printf("."), Sleep(350);
     }
     gotoxy(6, 4), printf("?\n");
     key = getch();
@@ -212,12 +215,11 @@ return1:
     key = getch();
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
-    gotoxy(1, 4), printf("어이 왜 무시하면서 가는 거야?");
+    gotoxy(1, 4), printf("어이 왜 무시하면서 가는 거야?                                                                                             ");
     key = getch();
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 
     gotoxy(1, 4), printf("그 여학생은 나에게 어깨동무를 한 체로 나에게 물어봤다.\n");
     key = getch();
 
-    // 2/3 프롤로그 파트 담당자: 30508 김윤기
 }
