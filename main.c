@@ -27,7 +27,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     MSG msg = {0};
     HBITMAP hBMP = (HBITMAP)LoadImage(NULL, ".\\texture\\menu.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
-    HWND imgControl = CreateWindow("STATIC", "adsdsadsa", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    HWND imgControl = CreateWindow("STATIC", "¸ÞÀÎÈ­¸é", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
     SendMessage(imgControl, STM_SETIMAGE, IMAGE_BITMAP, hBMP);
 
     mciSendString("open \".\\audio\\[BGM]ÙÊ×©ªììíªÎðàªÙ.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);

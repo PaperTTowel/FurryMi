@@ -100,7 +100,7 @@ void prologue(HINSTANCE hInstance)
     key = getch();
 
     HBITMAP hBMP = (HBITMAP)LoadImage(NULL, ".\\texture\\school2.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
-    HWND imgControl = CreateWindow("STATIC", "adsdsadsa", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    HWND imgControl = CreateWindow("STATIC", "복도", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
     SendMessage(imgControl, STM_SETIMAGE, IMAGE_BITMAP, hBMP);
 
     gotoxy(1, 4), printf("그래도 학교였다. 다만, 사람들 사이사이로 수인이 보일 뿐이였다.\n");
@@ -110,7 +110,7 @@ void prologue(HINSTANCE hInstance)
 
     DestroyWindow(imgControl);
     HBITMAP hBMP1 = (HBITMAP)LoadImage(NULL, ".\\texture\\schoolRooftop.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
-    HWND imgControl1 = CreateWindow("STATIC", "adsdsadsa", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    HWND imgControl1 = CreateWindow("STATIC", "학교 옥상", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
     SendMessage(imgControl1, STM_SETIMAGE, IMAGE_BITMAP, hBMP1);
 
     gotoxy(1, 4), printf("당황한 나는 학교 옥상으로 올라가 우리 학교 주변을 둘러보았다.\n");
