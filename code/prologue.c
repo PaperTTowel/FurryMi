@@ -5,7 +5,7 @@
 #pragma comment(lib, "winmm.lib")
 void prologue(HINSTANCE hInstance)
 { // 1/3 프롤로그 파트 담당자: 30507 김원혁
-    static char key;
+    static char key; // 동적변수로 할 경우 같은 변수끼리 꼬일 가능성이 있어 정적으로 지정함
     char name;
     printf("┌──────────────────────────────────────────┐\n");
     printf("│"), gotoxy(43, 1), printf("│");
@@ -16,14 +16,14 @@ void prologue(HINSTANCE hInstance)
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
     gotoxy(3, 3), printf("> ");
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-    scanf("%f", &name);
+    scanf("%f", &name); // 이름 입력
     system("cls");
     Sleep(1500);
     printf("\t프롤로그\n================================================================================\n\n\n");
     Sleep(1500);
-    PlaySound(TEXT(".\\audio\\[BGS]clock2.wav"), 0, SND_ASYNC | SND_LOOP); // BGS 반복재생
+    PlaySound(TEXT(".\\audio\\[BGS]clock2.wav"), 0, SND_ASYNC | SND_LOOP); // [BGS] 반복재생
     printf("답답하고 지루한 현실. 나는 이러한 지루하고 반복적인 일상에 지쳐 있었다.\n");
-    key = getch(); // 아무 키를 눌렀을때 다음으로 넘어가짐
+    key = getch(); // 아무 키를 눌렀을때 다음으로 넘어가도록 하는 역할
     printf("\'아... 나는 언제쯤 이러한 지루한 인생에서 벗어날 수 있을까?\'\n");
     key = getch();
     printf("이러한 생각을 언제부터 갖고 있었는지는 모르겠지만,\n이러한 생각이 내 머릿속에서 매우 오랫동안 있었다는 것은 확실하다.\n");
@@ -41,7 +41,7 @@ void prologue(HINSTANCE hInstance)
     gotoxy(2, 15), printf("-----------------------------------------\n");
     printf("└──────────────────────────────────────────┘\n"), Sleep(20);
     PlaySound(TEXT(".\\audio\\[SE]Move.wav"), 0, SND_ASYNC);
-    for(short i = 2; i <= 42; i++){
+    for(short i = 2; i <= 42; i++){ // 시각적 로딩창 구현
         gotoxy(i, 15), printf("=\n"), Sleep(30);
     }
     system("cls");
@@ -52,7 +52,7 @@ void prologue(HINSTANCE hInstance)
     PlaySound(TEXT(".\\audio\\[SE]Earth1.wav"), 0, SND_ASYNC);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 20);
     gotoxy(1, 4), printf("비켜");
-    for(short i = 4; i <= 64; i++){
+    for(short i = 4; i <= 64; i++){ // 비상!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         gotoxy(i, 4), printf("!"), Sleep(30);
     }
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
@@ -139,8 +139,8 @@ choice1:
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
     gotoxy(3, 15), printf("> "), scanf("%c", &choice);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-    switch(choice){
-    case 'a': // 뒤 돌아보기
+    switch(choice){ // 스위치 문 choice의 변수값 확인
+    case 'a': // 뒤 돌아보기 = choice 값에 a가 있을 경우 아래 코드 실행
         gotoxy(0, 12), printf("                                             \n"), Sleep(20);
         gotoxy(0, 13), printf("                                             \n"), Sleep(20);
         gotoxy(0, 14), printf("                                             \n"), Sleep(20);
@@ -150,8 +150,8 @@ choice1:
         key = getch();
         gotoxy(1, 4), printf("내 뒤에는 고양이 수인이 있었다.       \n");
         key = getch();
-        goto return1;
-    case 'b': // 무시하기
+        goto return1; // return1 로 이동
+    case 'b': // 무시하기 = choice 값에 b가 있을 경우 아래 코드 실행
         gotoxy(0, 12), printf("                                             \n"), Sleep(20);
         gotoxy(0, 13), printf("                                             \n"), Sleep(20);
         gotoxy(0, 14), printf("                                             \n"), Sleep(20);
@@ -164,7 +164,7 @@ choice1:
         gotoxy(1, 4), printf("내 눈앞에 고양이 수인이 내 시야에서 나타났다.\n");
         key = getch();
         goto return1;
-    default:
+    default: // 잘못된 입력 = choice 값이 a, b가 아닐 경우 다시 choice1으로 이동하여 반복
         gotoxy(5, 15), printf("                                 ");
         goto choice1;
     }
