@@ -8,7 +8,7 @@
 #include "code\prologue.c" // 프롤로그를 불러옴
 #include "code\chapter1.c" // 제 1장을 불러옴 
 
-int main(){
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
     /* vscode의 인코딩 방식을 ANSI 949 (EUC-KR)로 맞춰주십시오. !!모든 .c 파일!!
     Code Runner > Executor Map 에서 chcp 65001 && 부분을 지워주십시오.
     이 세팅은 윈도우10 CMD 환경에 적합한 인코딩 방식으로 제작됩니다. */
@@ -24,6 +24,11 @@ int main(){
     char key;
 
     short windows = 0;
+
+    MSG msg = {0};
+    HBITMAP hBMP = (HBITMAP)LoadImage(NULL, ".\\texture\\menu.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl = CreateWindow("STATIC", "adsdsadsa", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl, STM_SETIMAGE, IMAGE_BITMAP, hBMP);
 
     mciSendString("open \".\\audio\\[BGM]木漏れ日の調べ.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
     mciSendString("play mp3 repeat", NULL, 0, NULL);
@@ -79,6 +84,7 @@ menu:
         }
         if (key == '\r'){ // 객체 반환 = 엔터 키
             if (counter == 1){
+                DestroyWindow(imgControl);
                 mciSendString("stop mp3", NULL, 0, NULL); 
                 PlaySound(TEXT(".\\audio\\[SE]Interaction"), 0, SND_ASYNC);
                 system("cls");
