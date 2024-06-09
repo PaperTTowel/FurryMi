@@ -1,1 +1,1 @@
-short counter = 2;
+DestroyWindow(imgControl);

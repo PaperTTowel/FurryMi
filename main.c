@@ -107,7 +107,7 @@ menu:
                 system("cls");
                 system("MODE 98,30");
                 Sleep(1500);
-                prologue();
+                prologue(hInstance);
                 break;
             }
 
