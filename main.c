@@ -14,7 +14,7 @@ int main(){
     이 세팅은 윈도우10 CMD 환경에 적합한 인코딩 방식으로 제작됩니다. */
     system("MODE 98,30");
     printf("이 게임은 아직 중간저장을 지원하지 않습니다.\n");
-    printf("프리 알파 테스트 | 2024-06-08-0359 |\n\n");
+    printf("프리 알파 테스트 | 2024-06-09-1356 |\n\n");
     system("PAUSE");
 
     // 메인 화면 출력
@@ -79,7 +79,7 @@ menu:
         }
         if (key == '\r'){ // 객체 반환 = 엔터 키
             if (counter == 1){
-                mciSendString("stop mp3", NULL, 0, NULL);
+                mciSendString("stop mp3", NULL, 0, NULL); 
                 PlaySound(TEXT(".\\audio\\[SE]Interaction"), 0, SND_ASYNC);
                 system("cls");
                 if(windows == 0) system("MODE 120,10");
@@ -91,6 +91,11 @@ menu:
                 system("color 87");
                 PlaySound(TEXT(".\\audio\\[SE]Chime.wav"), 0, SND_ASYNC);
                 disclaimer(); // 면책조항
+                gotoxy(1, 19), system("PAUSE");
+                system("cls");
+                system("color E0");
+                PlaySound(TEXT(".\\audio\\[SE]Wall1.wav"), 0, SND_ASYNC);
+                bisogeo(); // 컨텐츠 경고
                 gotoxy(1, 19), system("PAUSE");
                 system("color 07");
                 system("cls");

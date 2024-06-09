@@ -30,6 +30,32 @@ void disclaimer(){
     gotoxy(2, 7), printf("만일 실제와 같은 경우가 있더라도 이는 우연에 의한 것임을 밝힙니다.");
 }
 
+void bisogeo(){
+    printf("┌────────────────────────────────────────────────────────────────────────────────┐\n"), Sleep(20);
+    printf("│"), gotoxy(36, 1), printf("컨텐츠 경고!"), gotoxy(81, 1), printf("│\n");
+    printf("├"), printf("────────────────────────────────────────────────────────────────────────────────"), gotoxy(81, 2), printf("┤\n"), Sleep(20);
+    printf("│"), gotoxy(81, 3), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 4), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 5), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 6), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 7), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 8), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 9), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 10), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 11), printf("│\n"), Sleep(20);
+    printf("│"), gotoxy(81, 12), printf("│\n"), Sleep(20);
+    printf("└────────────────────────────────────────────────────────────────────────────────┘\n"), Sleep(20);
+    gotoxy(2, 4), printf("이 미연시는 시각적 혐오성의 장르를 포함합니다.");
+    gotoxy(2, 5), printf("취향이 맞지 않으신 분들은 게임을 종료하시면 됩니다.");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
+    gotoxy(27, 7), printf("| 아래 장르가 포함됩니다 |");
+    gotoxy(2, 8), printf("◇ 퍼리");
+    gotoxy(2, 9), printf("◇ 로리");
+    gotoxy(2, 10), printf("◇ 촉수");
+    gotoxy(2, 11), printf("◇ 수간, 충간, 이종간");
+    gotoxy(2, 12), printf("◇ BBW or BBM (Big Beautiful Woman, Big Beautiful Man)");
+}
+
 void setting(){
     gotoxy(40, 8), printf("┌───────────────────────────────────────────────────────┐\n"), Sleep(10);
     gotoxy(40, 9), printf("│"), gotoxy(96, 9), printf("│\n"), gotoxy(44, 8), printf(" 설정 "), Sleep(10);
@@ -78,10 +104,10 @@ void help(){
     printf("└───────────────────────────────────────────────────────────────────────────────────────────────┘\n");
     gotoxy(25, 3), printf("이 게임은 콘솔을 기반으로 제작된 미연시입니다.\n");
     gotoxy(25, 4), printf("프로그래밍 수행평가에 의해 제작되었습니다.");
-    gotoxy(2, 6), printf("스토리 및 세계관 기획: 30508 김윤기");
+    gotoxy(2, 6), printf("스토리 및 세계관 기획/작성: 30508 김윤기");
     gotoxy(2, 7), printf("메인화면 프로그래밍: 30507 김원혁");
-    gotoxy(2, 8), printf("프롤로그 프로그래밍: ");
-    gotoxy(2, 9), printf("챕터1 프로그래밍: ");
-    gotoxy(2, 10), printf("챕터2 프로그래밍: ");
-    gotoxy(2, 11), printf("챕터3 프로그래밍: ");
+    gotoxy(2, 8), printf("프롤로그 프로그래밍: 30507 김원혁 | 30503 김노아");
+    gotoxy(2, 9), printf("챕터1 프로그래밍: 30503 김노아");
+    gotoxy(2, 10), printf("챕터2 프로그래밍: (아직 안나옴)");
+    gotoxy(2, 11), printf("발표: 30730: 정경준");
 }
