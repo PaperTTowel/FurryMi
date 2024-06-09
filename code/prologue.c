@@ -203,7 +203,7 @@ return1:
         gotoxy(i, 4), printf("."), Sleep(30);
     }
     gotoxy(6, 4), printf("?\n");
-    key = gotch();
+    key = getch();
     gotoxy(1, 4), printf("분명 지금이 세계에서 나를 아는 사람은 없을 것이다.\n");
     key = getch();
     gotoxy(1, 4), printf("나는 다른 사람이 나를 친구랑 착각했겠지 하며 고개를 돌렸을 때 매우 놀랐었다.\n");
