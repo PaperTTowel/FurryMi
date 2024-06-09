@@ -1,1 +1,1 @@
-DestroyWindow(imgControl);
+-135
