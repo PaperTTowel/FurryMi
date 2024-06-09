@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <mmsystem.h>
 #pragma comment(lib, "winmm.lib")
-void prologue()
+void prologue(HINSTANCE hInstance)
 { // 1/3 프롤로그 파트 담당자: 30507 김원혁
     static char key;
     char name;
@@ -98,10 +98,21 @@ void prologue()
     key = getch();
     gotoxy(1, 4), printf("나는 바로 화장실을 나가 주변을 둘러 보았다.\n");
     key = getch();
+
+    HBITMAP hBMP = (HBITMAP)LoadImage(NULL, ".\\texture\\school2.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl = CreateWindow("STATIC", "adsdsadsa", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl, STM_SETIMAGE, IMAGE_BITMAP, hBMP);
+
     gotoxy(1, 4), printf("그래도 학교였다. 다만, 사람들 사이사이로 수인이 보일 뿐이였다.\n");
     key = getch();
     gotoxy(1, 4), printf("\"아니 도데체 뭔일이야\"                                          \n");
     key = getch();
+
+    DestroyWindow(imgControl);
+    HBITMAP hBMP1 = (HBITMAP)LoadImage(NULL, ".\\texture\\schoolRooftop.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl1 = CreateWindow("STATIC", "adsdsadsa", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl1, STM_SETIMAGE, IMAGE_BITMAP, hBMP1);
+
     gotoxy(1, 4), printf("당황한 나는 학교 옥상으로 올라가 우리 학교 주변을 둘러보았다.\n");
     key = getch();
     gotoxy(1, 4), printf("당연하게도 내가 원래 있던 지구에 있는 우리 동네랑 같았다.         \n");
@@ -162,6 +173,7 @@ choice1:
 return1:
     gotoxy(1, 4), printf("\"아..어..! 고마워\"                              \n");
     key = getch();
+    DestroyWindow(imgControl1);
     gotoxy(1, 4), printf("나는 고맙단 인사를 하고 교실로 뛰어 들어갔다.\n");
     key = getch();
     gotoxy(1, 4), printf("다 똑같다 몇몇 사람이 수인이 되어버린 것만 빼고... 내 자리도 똑같은 위치에 있었다.\n");
