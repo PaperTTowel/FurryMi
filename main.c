@@ -112,7 +112,7 @@ menu:
                 prologue(hInstance); // 프롤로그 hInstance 변수와 함께 호출
                 system("cls");
                 Sleep(80);
-                chapter1(hInstance);
+                chapter1(hInstance, menu);
                 break;
             }
 

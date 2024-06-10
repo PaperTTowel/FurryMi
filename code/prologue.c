@@ -6,19 +6,6 @@
 void prologue(HINSTANCE hInstance)
 { // 1/3 프롤로그 파트 담당자: 30507 김원혁
     static char key; // 동적변수로 할 경우 같은 변수끼리 꼬일 가능성이 있어 정적으로 지정함
-    char name;
-    printf("┌──────────────────────────────────────────┐\n");
-    printf("│"), gotoxy(43, 1), printf("│");
-    gotoxy(14, 1), printf("당신의 이름은?\n");
-    printf("├──────────────────────────────────────────┤\n");
-    printf("│"), gotoxy(43, 3), printf("│\n");
-    printf("└──────────────────────────────────────────┘\n");
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
-    gotoxy(3, 3), printf("> ");
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-    scanf("%f", &name); // 이름 입력
-    system("cls");
-    Sleep(1500);
     printf("\t프롤로그\n================================================================================\n\n\n");
     Sleep(1500);
     PlaySound(TEXT(".\\audio\\[BGS]clock2.wav"), 0, SND_ASYNC | SND_LOOP); // [BGS] 반복재생
@@ -189,7 +176,7 @@ return1:
     // 2/3 프롤로그 파트 담당자: 30508 김윤기
 
     HBITMAP hBMP2 = (HBITMAP)LoadImage(NULL, ".\\texture\\school3.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
-    HWND imgControl2 = CreateWindow("STATIC", "학교 정문", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    HWND imgControl2 = CreateWindow("STATIC", "학교 후동 신발장", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
     SendMessage(imgControl2, STM_SETIMAGE, IMAGE_BITMAP, hBMP2);
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
@@ -224,6 +211,8 @@ return1:
 
     gotoxy(1, 4), printf("그 여학생은 나에게 어깨동무를 한 체로 나에게 물어봤다.\n");
     key = getch();
+    DestroyWindow(imgControl2);
+
     DestroyWindow(imgControl2);
 
 }
