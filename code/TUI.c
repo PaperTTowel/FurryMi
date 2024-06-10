@@ -101,13 +101,19 @@ void help(){
     printf("│"), gotoxy(96, 10), printf("│\n");
     printf("│"), gotoxy(96, 11), printf("│\n");
     printf("│"), gotoxy(96, 12), printf("│\n");
+    printf("│"), gotoxy(96, 13), printf("│\n");
+    printf("│"), gotoxy(96, 14), printf("│\n");
+    printf("│"), gotoxy(96, 15), printf("│\n");
     printf("└───────────────────────────────────────────────────────────────────────────────────────────────┘\n");
     gotoxy(25, 3), printf("이 게임은 콘솔을 기반으로 제작된 미연시입니다.\n");
     gotoxy(25, 4), printf("프로그래밍 수행평가에 의해 제작되었습니다.");
     gotoxy(2, 6), printf("스토리 및 세계관 기획/작성: 30508 김윤기");
-    gotoxy(2, 7), printf("메인화면 프로그래밍: 30507 김원혁");
-    gotoxy(2, 8), printf("프롤로그 프로그래밍: 1/3 30507 김원혁 | 2/3 30503 김노아");
-    gotoxy(2, 9), printf("챕터1 프로그래밍: 30503 김노아");
-    gotoxy(2, 10), printf("챕터2 프로그래밍: (아직 안나옴)");
-    gotoxy(2, 11), printf("발표: 30730: 정경준");
+    gotoxy(2, 7), printf("캐릭터 디자인 및 배경 일러스트: 30508 김윤기");
+    gotoxy(2, 8), printf("메인화면 프로그래밍: 30507 김원혁");
+    gotoxy(2, 9), printf("프롤로그 프로그래밍: 1/3 30507 김원혁 | 2/3 30508 김윤기");
+    gotoxy(2, 10), printf("챕터1 프로그래밍: 1/3 30507 김원혁 | 2/3 (이후 추가)");
+    gotoxy(2, 11), printf("챕터2 프로그래밍: (업데이트 예정)");
+    gotoxy(2, 12), printf("PPT 제작 및 코드 해석후 주석 표시: 30503 김노아");
+    gotoxy(2, 13), printf("주석 확인후 코드 학습 및 발표: 30730: 정경준");
+    gotoxy(2, 15), printf("GitHub 리포지토리: https://github.com/PaperTTowel/FurryMi");
 }
