@@ -185,9 +185,12 @@ return1:
     gotoxy(1, 4), printf("그렇게 시간은 흘러 하교 시간이 되었고 나는 하교 준비를 마치고 신발장을 향해 가고 있었다.  \n");
     key = getch();
     gotoxy(1, 4), printf("                                                                                        \n");
+    PlaySound(TEXT(".\\audio\\[BGM]coffeeSugarの森.wav"), 0, SND_ASYNC | SND_LOOP);
     // 2/3 프롤로그 파트 담당자: 30508 김윤기
 
-    //여기 신발장 사진 ++------------------------------------------------------------------------------------------------------
+    HBITMAP hBMP2 = (HBITMAP)LoadImage(NULL, ".\\texture\\school3.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl2 = CreateWindow("STATIC", "학교 정문", WS_VISIBLE | SS_BITMAP, 1000, 100, 800, 600, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl2, STM_SETIMAGE, IMAGE_BITMAP, hBMP2);
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
     gotoxy(1, 4), printf("여어");
@@ -221,5 +224,6 @@ return1:
 
     gotoxy(1, 4), printf("그 여학생은 나에게 어깨동무를 한 체로 나에게 물어봤다.\n");
     key = getch();
+    DestroyWindow(imgControl2);
 
 }

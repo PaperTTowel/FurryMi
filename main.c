@@ -16,7 +16,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     이 세팅은 윈도우10 CMD 환경에 적합한 인코딩 방식으로 제작됩니다. */
     system("MODE 98,30");
     printf("이 게임은 아직 중간저장을 지원하지 않습니다.\n");
-    printf("프리 알파 테스트 | 2024-06-09-1356 |\n\n");
+    printf("프리 알파 테스트 | 2024-06-10-0241 |\n\n");
     system("PAUSE");
 
     // 메인 화면 출력
