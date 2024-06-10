@@ -211,8 +211,8 @@ return1:
 
     gotoxy(1, 4), printf("그 여학생은 나에게 어깨동무를 한 체로 나에게 물어봤다.\n");
     key = getch();
-    DestroyWindow(imgControl2);
-
+    
+    PlaySound(TEXT(".\\audio\\[SE]Cursor.wav"), 0, SND_ASYNC);
     DestroyWindow(imgControl2);
 
 }

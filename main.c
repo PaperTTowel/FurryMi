@@ -16,7 +16,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     이 세팅은 윈도우10 CMD 환경에 적합한 인코딩 방식으로 제작됩니다. */
     system("MODE 98,30");
     printf("이 게임은 아직 중간저장을 지원하지 않습니다.\n");
-    printf("프리 알파 테스트 | 2024-06-10-0241 |\n\n");
+    printf("프리 알파 테스트 | 2024-06-10-2013 |\n\n");
     system("PAUSE");
 
     // 메인 화면 출력
@@ -109,10 +109,28 @@ menu:
                 system("cls");
                 system("MODE 98,30");
                 Sleep(1500);
+                char name[10];
+                printf("┌──────────────────────────────────────────┐\n");
+                printf("│"), gotoxy(43, 1), printf("│");
+                gotoxy(14, 1), printf("당신의 이름은?\n");
+                printf("├──────────────────────────────────────────┤\n");
+                printf("│"), gotoxy(43, 3), printf("│\n");
+                printf("└──────────────────────────────────────────┘\n");
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+                gotoxy(3, 3), printf("> ");
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+                scanf("%s", name); // 이름 입력
+                gotoxy(1, 6), printf("이름은 %s로 지정되었습니다.\n", name);
+                Sleep(500);
+                system("cls");
+                Sleep(1500);
                 prologue(hInstance); // 프롤로그 hInstance 변수와 함께 호출
                 system("cls");
                 Sleep(80);
-                chapter1(hInstance, menu);
+                chapter1(hInstance, name);
+                system("cls");
+                gotoxy(1, 4), printf("여기까지 제작되었습니다.");
+                system("PAUSE");
                 break;
             }
 
