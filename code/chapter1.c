@@ -49,6 +49,11 @@ void chapter1(HINSTANCE hInstance,char name[10]){ // 챕터 1 담당자: 30507 김원혁
     key = getch();
     gotoxy(1, 4), printf("\"히비키?\"                                   \n");
     key = getch();
+
+    HBITMAP hib = (HBITMAP)LoadImage(NULL, ".\\texture\\hibiki.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl_h = CreateWindow("STATIC", "히비키", WS_VISIBLE | SS_BITMAP, 795, 10, 200, 200, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl_h, STM_SETIMAGE, IMAGE_BITMAP, hib);
+
     gotoxy(1, 4), printf("히비키였다. \'왜... 여기에 있는 거지?\'\n");
     key = getch();
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
@@ -94,6 +99,7 @@ void chapter1(HINSTANCE hInstance,char name[10]){ // 챕터 1 담당자: 30507 김원혁
     DestroyWindow(imgControl);
     gotoxy(1, 4), printf("이렇게 우리는 이런저런 이야기를 하면서 학교에 도착하였다.\n");
     key = getch();
+    DestroyWindow(imgControl_h);
     gotoxy(1, 4), printf("히비키랑 나는 반이 달라서 각자의 반으로 갔다.                 \n");
     key = getch();
     gotoxy(1, 4), printf("시끌벅적한 교실에는 털들이 휘날리고 있었다.       \n");
@@ -119,6 +125,11 @@ void chapter1(HINSTANCE hInstance,char name[10]){ // 챕터 1 담당자: 30507 김원혁
     key = getch();
     gotoxy(1, 4), printf("한숨을 돌리고 있는 중 누가 내 등을 건드리며 날 불렀다.\n");
     key = getch();
+
+    HBITMAP hib2 = (HBITMAP)LoadImage(NULL, ".\\texture\\hibiki.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl_h1 = CreateWindow("STATIC", "히비키", WS_VISIBLE | SS_BITMAP, 795, 10, 200, 200, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl_h1, STM_SETIMAGE, IMAGE_BITMAP, hib2);
+
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
     gotoxy(1, 4), printf("\"안녕~?\"                                                \n");
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
@@ -137,9 +148,14 @@ void chapter1(HINSTANCE hInstance,char name[10]){ // 챕터 1 담당자: 30507 김원혁
     gotoxy(1, 4), printf("\"안~녕~\"                                    \n");
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     key = getch();
-    gotoxy(1, 4), printf("흰색 털과 푸른 눈이 인상적인 고양이 수인 여학생이 히비키 뒤에서 나오면서 인사하였다.\n");
+
+    HBITMAP kas = (HBITMAP)LoadImage(NULL, ".\\texture\\kasumi.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl_k = CreateWindow("STATIC", "카스미", WS_VISIBLE | SS_BITMAP, 590, 10, 200, 200, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl_k, STM_SETIMAGE, IMAGE_BITMAP, kas);
+
+    gotoxy(1, 4), printf("금빛 털과 에메랄드 색의 눈이 인상적인 고양이 수인 여학생이 히비키 뒤에서 나오면서 인사하였다.\n");
     key = getch();
-    gotoxy(1, 4), printf("\"안녕.\"                                                                             \n");
+    gotoxy(1, 4), printf("\"안녕.\"                                                                                             \n");
     key = getch();
     gotoxy(1, 4), printf("나도 인사하였다.\n");
     key = getch();
@@ -259,6 +275,8 @@ return1:
     gotoxy(1, 4), printf("카스미는 장난감이 생겨서 신나는 듯이 말했다.\n");
     key = getch();
     DestroyWindow(imgControl1);
+    DestroyWindow(imgControl_h1);
+    DestroyWindow(imgControl_k);
     gotoxy(1, 4), printf("그렇게 해어진 후 나는 다시 털이 날아다니는 반으로 돌아왔다.\n");
     key = getch();
 

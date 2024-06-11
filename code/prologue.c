@@ -204,6 +204,10 @@ return1:
     gotoxy(1, 4), printf("나에게 어깨동무를 한 사람은 바로 아침 학교 옥상에서 나에게 수업이 시작하기 전 이란 것을 알려준 그 여학생이기 때문이다.\n");
     key = getch();
 
+    HBITMAP hib = (HBITMAP)LoadImage(NULL, ".\\texture\\hibiki.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    HWND imgControl_h = CreateWindow("STATIC", "히비키", WS_VISIBLE | SS_BITMAP, 795, 10, 200, 200, NULL, NULL, hInstance, NULL);
+    SendMessage(imgControl_h, STM_SETIMAGE, IMAGE_BITMAP, hib);
+
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
     gotoxy(1, 4), printf("\"어이 왜 무시하면서 가는 거야?\"                                                                                             ");
     key = getch();
@@ -226,6 +230,8 @@ return1:
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     key = getch();
     gotoxy(1, 4), printf("\"난...%s야..\"                                           \n", name);
+    key = getch();
+    gotoxy(1, 4), printf("푸른색 눈에 회색 머리카락에 복슬복슬해 보이는 늑대 귀가 머리에 달려있는 소녀였다.\n");
     key = getch();
     gotoxy(1, 4), printf("아무리 봐도 매우 적극적인 사람이었다.                                                               \n");
     key = getch();
@@ -279,6 +285,7 @@ return1:
     key = getch();
     gotoxy(1, 4), printf("\"응. 내일 봐.\"                                                          \n");
     key = getch();
+    DestroyWindow(imgControl_h);
     gotoxy(1, 4), printf("나도 인사를 한 후 집으로 향했다.\n");
     key = getch();
     gotoxy(1, 4), printf("집으로 가는 길 중에도 인간이 반 여러 종류의 수인이 반이 있었다.\n");
