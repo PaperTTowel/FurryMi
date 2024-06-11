@@ -279,5 +279,50 @@ return1:
     DestroyWindow(imgControl_k);
     gotoxy(1, 4), printf("그렇게 해어진 후 나는 다시 털이 날아다니는 반으로 돌아왔다.\n");
     key = getch();
+    gotoxy(1, 4), printf("그 와중에 어떤 새끼가 열어놓았던 창문을 닫았다.                    \n");
+    key = getch();
+    gotoxy(1, 4), printf("미친 것이 분명하다. 나는 바로 달려가 창문을 열어버렸다.          \n");
+    key = getch();
+    gotoxy(1, 4), printf("\"와.... 이제야 좀 살 것 같다...\"                           \n");
+    key = getch();
+    gotoxy(1, 4), printf("내 폐에 박힌 털을 신선한 공기로 빼면서 3, 4교시를 보냈다.          \n");
+    key = getch();
+    gotoxy(1, 4), printf("\"아. 오늘 점심 뭐먹지..? 빵이나 먹을까?\"                     \n");
+    key = getch();
+    gotoxy(1, 4), printf("어느덧 점심시간이 다가왔다.                   \n");
+    key = getch();
+    gotoxy(1, 4), printf("학교에서 털 때문에 체력이 많이 떨어진 나는 많이 배고팠다.     \n");
+    key = getch();
+    gotoxy(1, 4), printf("무엇을 점심으로 먹을지 고민하며 점심시간만을 기다리고 있었다.       \n");
+    key = getch();
+
+    PlaySound(TEXT(".\\audio\\[SE]schoolBell.wav"), 0, SND_ASYNC);
+    gotoxy(1, 4), printf("띵~동~댕~동~                                                       \n");
+    key = getch();
+
+    gotoxy(1, 4), printf("점심시간 종이다.            \n");
+    key = getch();
+    gotoxy(1, 4), printf("나는 책상 위를 정리하고 챙겨온 점심을 챙겨 옥상으로 올라갔다.        \n");
+    key = getch();
+    gotoxy(1, 4), printf("내 점심은 매론 빵이다. 그리고 학교 자판기에서 뽑은 이온 음료다.          \n");
+    key = getch();
+    gotoxy(1, 4), printf("나는 경치가 잘 보이는 곳에 있는 벤치 위에 앉아서 마을 경치를 구경하면서 빵을 뜯어 먹기 시작했다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("멀리서 보면 아니 가까이서 봐도 찐따처럼 보일 것이다.                                                    \n");
+    key = getch();
+    gotoxy(1, 4), printf("옥상 밴치에 쭈구려 앉아서 혼자 빵을 먹고 있는 찐다.                    \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+    gotoxy(1, 4), printf("\"똑똑?\"                                          \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("누군가가 내 등 뒤에서 날 불렀다.                   \n");
+    key = getch();
+    gotoxy(1, 4), printf("날 부를 사람이 없었기에 나는 당황해서 뒤를 돌아보려 했다.    \n");
+    key = getch();
+
+    
 
 }
