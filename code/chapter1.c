@@ -166,18 +166,18 @@ void chapter1(HINSTANCE hInstance,char name[10]){ // 챕터 1 담당자: 30507 김원혁
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     key = getch();
 
-    int choice;
+    int choice1;
     gotoxy(0, 12), printf("┌──────────────────────────────────────────┐\n"), Sleep(20);
     printf("│"), gotoxy(43, 13), printf("│"), Sleep(20);
     gotoxy(8, 13), printf("a. ? || b. (부정한다)\n");
     printf("├──────────────────────────────────────────┤\n"), Sleep(20);
     printf("│"), gotoxy(43, 15), printf("│\n"), Sleep(20);
     printf("└──────────────────────────────────────────┘\n"), Sleep(20);
-choice1:
+choice01:
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
-    gotoxy(3, 15), printf("> "), scanf("%c", &choice);
+    gotoxy(3, 15), printf("> "), scanf("%c", &choice1);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-    switch(choice){
+    switch(choice1){
     case 'a':
         gotoxy(0, 12), printf("                                             \n"), Sleep(20);
         gotoxy(0, 13), printf("                                             \n"), Sleep(20);
@@ -208,7 +208,7 @@ choice1:
         goto return1;
     default: // 잘못된 입력 = choice 값이 a, b가 아닐 경우 다시 choice1으로 이동하여 반복
         gotoxy(5, 15), printf("                                 ");
-        goto choice1;
+        goto choice01;
     }
 
 return1:
@@ -323,6 +323,173 @@ return1:
     gotoxy(1, 4), printf("날 부를 사람이 없었기에 나는 당황해서 뒤를 돌아보려 했다.    \n");
     key = getch();
 
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 20);
+    gotoxy(1, 4), printf("퍽");
+    for(short i = 2; i <= 7; i++){ // 비상!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        gotoxy(i, 4), printf("!"), Sleep(50);
+    }
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("무언가가 뒤를 돌아보려는 내 머리를 강타했다.                 \n");
+    key = getch();
+    gotoxy(1, 4), printf("나는 앞으로 고꾸라질뻔한 내 몸을 일으켜 세우려 안간힘을 썻다.          \n");
+    key = getch();
+
+    for(short i = 1; i <= 7; i++){ // 비상!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        gotoxy(i, 4), printf("?"), printf("!"), Sleep(50);
+    }
+    key = getch();
+
+    gotoxy(1, 4), printf("나는 더욱 당황해하면서 뒤를 돌아봤다.                           \n");
+    key = getch();
+    gotoxy(1, 4), printf("그곳에는 히비키와 카스미가 서있었다.                    \n");
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+    gotoxy(1, 4), printf("\"ㅋㅋㅋㅋ 어이 왜 찐따처럼 앉아 빵을 먹고 있는 거야?\"           \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("카스미의 장난 섞인 말이 날라와 내 가슴에 날라와 박혔다.               \n");
+    key = getch();
+    gotoxy(1, 4), printf("분명 내 머리를 때린 것도 이놈일 것이다.                          \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
+    gotoxy(1, 4), printf("\"으아.. 카스미 너 뭔짓을 하는거야!\"          \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("히비키가 카스미에게 말했다.                         \n");
+    key = getch();
+    gotoxy(1, 4), printf("히비키의 얼굴에는 당황했다는 표정이 고스란히 나와있었다.             \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
+    gotoxy(1, 4), printf("\"괜찮아?\"                                               \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("히비키는 나에게 걱정하는 표정을 지으면서 말했다.             \n");
+    key = getch();
+    gotoxy(1, 4), printf("\"난 괜찮아. 그것보다 말이 더 아픈데...?\"                     \n");
+    key = getch();
+    gotoxy(1, 4), printf("진심으로 머리를 맞은 것보다 카스미의 말이 100배는 더 아팠던 것 같다.         \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+    gotoxy(1, 4), printf("\"ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ\"                                               \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     
+    gotoxy(1, 4), printf("카스미는 장난끼 넘치는 표정으로 웃고 있었다.                   \n");
+    key = getch();
+    gotoxy(1, 4), printf("\"그래서, 왜 온 거야?\"                                  \n");
+    key = getch();
+    gotoxy(1, 4), printf("내가 물어봤다.                                 \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+    gotoxy(1, 4), printf("\"난 히비키를 따라왔어!\"                         \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("카스미가 말했다.                       \n");
+    key = getch();
+    gotoxy(1, 4), printf("\"그럼 히비키는 왜 온거야?\"               \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
+    gotoxy(1, 4), printf("\"가...같이... 점심 먹으려고요...\"                    \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("히비키가 수줍어하며 말했다.                      \n");
+    key = getch();
+    gotoxy(0, 12), printf("┌────────────────────────────────────────────────────────┐\n"), Sleep(20);
+    printf("│"), gotoxy(43, 13), printf("│"), Sleep(20);
+    gotoxy(8, 13), printf("a.그래! 같이 먹자. || b.미안 난 찐따여서 혼자 먹어야 겠는걸?\n");
+    printf("├────────────────────────────────────────────────────────┤\n"), Sleep(20);
+    printf("│"), gotoxy(43, 15), printf("│\n"), Sleep(20);
+    printf("└────────────────────────────────────────────────────────┘\n"), Sleep(20);
+
+    int choice2;
+choice02:
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+    gotoxy(3, 15), printf("> "), scanf("%c", &choice2);
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+    switch(choice2){ // 스위치 문 choice의 변수값 확인
+    case 'a': // 뒤 돌아보기 = choice 값에 a가 있을 경우 아래 코드 실행
+        gotoxy(0, 12), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 13), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 14), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 15), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 16), printf("                                             \n"), Sleep(20);
+        gotoxy(1, 4), printf("히비키와 카스미는 내 옆에 앉아 도시락을 먹을 준비를 했다.                                   \n");
+        key = getch();
+        goto return2; // return1 로 이동
+    case 'b': // 무시하기 = choice 값에 b가 있을 경우 아래 코드 실행
+        gotoxy(0, 12), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 13), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 14), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 15), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 16), printf("                                             \n"), Sleep(20);
+        gotoxy(0, 16), printf("거절을 할려고 하였지만 이미 카스미는 내 옆에 앉아서 도시락을 먹을 준비를 하고 있었다.                                             \n"), Sleep(20);
+        key = getch();
+        goto return2;
+    default: // 잘못된 입력 = choice 값이 a, b가 아닐 경우 다시 choice1으로 이동하여 반복
+        gotoxy(5, 15), printf("                                 ");
+        goto choice02;
+    }
+
+return2:
+    gotoxy(1, 4), printf("어쩐지 옆에서 카스미가 킥킥대는 소리가 들렸다.                                                         \n");
+    key = getch();
+    gotoxy(1, 4), printf("카스미와 히비키의 도시락 통 둘다 각자의 개성이 뿜어져 나오는 도시락통이다.     \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+    gotoxy(1, 4), printf("\"응? 유키는 매론빵이랑 에너지 드링크가 점심인거야?\"                               \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("카스미가 내 빵과 에너지 드링크를 보면서 물었다.                           \n");
+    key = getch();
+    gotoxy("\"응. 딱히 아침부터 도시락을 만드는 데에 에너지를 쓰고 싶지 않아서.\"          \n");
+    key = getch();
+    gotoxy(1, 4), printf("솔직히 아침 일찍 일어나서 도시락을 만드는 것은 너무 힘들다.                   \n");
+    key = getch();
+    gotoxy(1, 4), printf("몇 번 시도했다가 너무 힘들어서 포기하고 걍 빵으로 점심을 때우고 있다.                \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+    gotoxy(1, 4), printf("\"흐음~ 그럼 내 도시락 반찬 조금 줄게. 자!\"                                \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("카스미는 자기 도시락의 반찬을 몇 개 집어서 내 빵 위에 올려놓았다.         \n");
+    key = getch();
+
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
+    gotoxy(1, 4), printf("\"엇! 그.. 그럼 저도 조금 드릴게요!\"                                      \n");
+    key = getch();
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+    gotoxy(1, 4), printf("히비키도 카스미의 말을 듣고 도시락에서 반찬 몇 개를 집어서 내 빵 위에 올려놨다.        \n");
+    key = getch();
+    gotoxy(1, 4), printf("그렇게 우리는 옥상 벤치에 앉아서 점심을 먹었다.                                       \n");
+    key = getch();
+    gotoxy(1, 4), printf("엄청 맛있었다.                                                                      \n");
+    key = getch();
+    gotoxy(1, 4),printf("다만                                \n");
+    key = getch();
+    gotoxy(1, 4), printf("받은 반찬에서 조금의 털이 나왔다.             \n");
+    key = getch();
+    gotoxy(1, 4), pirntf("음~ 역시 수인이 만든 음식이야.                \n");
+    key = getch();
+    gotoxy(1, 4), printf("털이 조금 묻은 점심을 다 먹은 우리는 오후 수업을 위해 각자의 반으로 돌아갔다.         \n");
+    key = getch();
+    gotoxy(1, 4), printf("반에 돌아오자 마자 털들이 내 기도를 막는 것을 느끼고는 반마다 고성능 공기청정기가 필요할 것 같다고 생각했다.");
+    key = getch();
 
 }
