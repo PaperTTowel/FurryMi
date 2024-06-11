@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <mmsystem.h>
 #pragma comment(lib, "winmm.lib")
-void prologue(HINSTANCE hInstance)
+void prologue(HINSTANCE hInstance,char name[10])
 { // 1/3 프롤로그 파트 담당자: 30507 김원혁
     static char key; // 동적변수로 할 경우 같은 변수끼리 꼬일 가능성이 있어 정적으로 지정함
     printf("\t프롤로그\n================================================================================\n\n\n");
@@ -180,7 +180,7 @@ return1:
     SendMessage(imgControl2, STM_SETIMAGE, IMAGE_BITMAP, hBMP2);
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
-    gotoxy(1, 4), printf("여어");
+    gotoxy(1, 4), printf("\"여어!!!!!!!\"");
     for(short i = 4; i <= 64; i++){
         gotoxy(i, 4), printf("!"), Sleep(30);
     }
@@ -195,7 +195,7 @@ return1:
     for(short i = 1; i <= 5; i++){
         gotoxy(i, 4), printf("."), Sleep(350);
     }
-    gotoxy(6, 4), printf("?\n");
+    gotoxy(6, 4), printf("\"...?\"\n");
     key = getch();
     gotoxy(1, 4), printf("분명 지금이 세계에서 나를 아는 사람은 없을 것이다.\n");
     key = getch();
@@ -205,7 +205,7 @@ return1:
     key = getch();
 
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
-    gotoxy(1, 4), printf("어이 왜 무시하면서 가는 거야?                                                                                             ");
+    gotoxy(1, 4), printf("\"어이 왜 무시하면서 가는 거야?\"                                                                                             ");
     key = getch();
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 
@@ -215,4 +215,54 @@ return1:
     PlaySound(TEXT(".\\audio\\[SE]Cursor.wav"), 0, SND_ASYNC);
     DestroyWindow(imgControl2);
 
+    gotoxy(1, 4), printf("\"너는 그때 그 학교 수업 시간이라고 했던....\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("나는 매우 당황해서 말을 잇지 못했다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"오! 기억하고 있네! 난 히이라기 히비키 고양이 수인 학생이야!\"\n\" 간단하게 히비키라 불러줘. 넌 이름이?\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"난...%s야..\"\n", name);
+    key = getch();
+    gotoxy(1, 4), printf("아무리 봐도 매우 적극적인 사람이었다.\n소심한 나로서는 긴장이 되었다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"오! %s라고 하는구나 잘부탁해! 라고 부르면 될려나?\"\n", name);
+    key = getch();
+    gotoxy(1, 4), printf("\"으..응, 잘 부탁해..\"\n");
+    key = getch(); 
+    gotoxy(1, 4), printf("이렇게 인사를 하고 나는 바로 집으로 향해 갔지만 저 히비키라는 여자아이도 가는 길이 같은지\n나로써는 매우 불편한 길동무가 생겼다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("서로 말없이 1분정도 갔을까?\n히비키는 나에게 말을 걸어왔다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"아침에 왜 옥상에서 멍 때리고 있었던거야? 무슨 일 있어?\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("아침에 너무 많은 일이 있어 뇌가 포화되어버린 나의 표정을 본 것 같았다.\n\"하늘이 너무 멋져서 감상하고 있었어.\"");
+    key = getch();
+    gotoxy(1, 4), printf("대충 나는 둘러대었다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"그렇구나. 나는 무슨 일 있는 줄 알았네. 하긴 오늘 아침 하늘이 예쁘긴 했지!\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("이 이야기를 시작으로 이런저런 이야기를 나누면서 집으로 향했다.\n그래도 좀 이야기를 하바 보니까 긴장이 풀리는 것 같았다.");
+    key = getch();
+    gotoxy(1, 4), printf("\"아! 난 여기서 오른쪽이야. 너는 어디로 가야해?\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("사거리에 거의 다 왔을 떄 히비키가 물었다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"나는 왼쪽으로 가야해.\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("저 사거리를 기준으로 각자의 집이 반대쪽인 것 같았다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"그래? 그럼 바이바이~~!, 내일 학교에서 봐!\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("히비키는 나에게 인사를 하고 자기 집을 향해 갔다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("\"응. 내일 봐.\"\n");
+    key = getch();
+    gotoxy(1, 4), printf("나도 인사를 한 후 집으로 향했다.\n집으로 가는 길 중에도 인간이 반 여러 종류의 수인이 반이 있었다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("느낌상 발전한 이세계에 온 느낌이였다. 집은 원래 지구와 같은 곳에 있었다.\n아무리 봐도 여기는 지구랑 자리가 완전히 같은 것 같았다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("나는 혼자 살았기에 상관이 없었지만, 만약 부모님이나 다른 사람이랑 같이 살았으면 쫌 아찔했을 것 같다.\n");
+    key = getch();
+    gotoxy(1, 4), printf("나는 집에 들어와 피곤한 몸을 침대로 던진 후 잠에 들었다.\n");
+    key = getch();
 }

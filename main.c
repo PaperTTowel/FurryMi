@@ -124,7 +124,7 @@ menu:
                 Sleep(500);
                 system("cls");
                 Sleep(1500);
-                prologue(hInstance); // 프롤로그 hInstance 변수와 함께 호출
+                prologue(hInstance, name); // 프롤로그 hInstance 변수와 함께 호출
                 system("cls");
                 Sleep(80);
                 chapter1(hInstance, name);
