@@ -1,1 +1,1 @@
-PlaySound(TEXT(".\\audio\\[SE]Cursor.wav"), 0, SND_ASYNC);
+system("color 07");
